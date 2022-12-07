@@ -9,6 +9,7 @@ import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { SearcEmployeeComponent } from './searc-employee/searc-employee.component';
 
 const myRoute:Routes=[
   {
@@ -18,6 +19,10 @@ const myRoute:Routes=[
   {
     path:"view",
     component:ViewEmployeeComponent
+  },
+  {
+    path:"search",
+    component:SearcEmployeeComponent
   }
 ]
 
@@ -26,7 +31,8 @@ const myRoute:Routes=[
     AppComponent,
     AddEmployeeComponent,
     ViewEmployeeComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearcEmployeeComponent
   ],
   imports: [
     BrowserModule,
