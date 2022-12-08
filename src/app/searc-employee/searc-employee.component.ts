@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { ApiService } from '../api.service';
 export class SearcEmployeeComponent {
 
   constructor(private api:ApiService){}
+  
 
   empcode=""
 
@@ -31,6 +33,21 @@ export class SearcEmployeeComponent {
       }
     }
   )
+  }
+  deleteBtnClick=(id:any)=>{
+    let data:any={"id":id}
+    this.api.deleteEmployee(data).subscribe(
+      (response:any)=>{
+        console.log(response)
+        if(response.status=="success"){
+          alert("deleted successfully")
+          this.searchEmployee=[]
+        }else{
+          alert("something went wrong")
+        }
+        
+      }
+    )
   }
 
   
